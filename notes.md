@@ -29,6 +29,11 @@
 - `HINCRBY key field increment`
 - `HSET key field value`
 - `HVALS key`
+- `HKEYS key`
+
+# Redis Linked Lists
+
+Redis uses doubly linked lists for `List` data type operations, meaning each element is linked to both the previous and next nodes. Accessing or querying data from the middle of the list is expensive (O(n)) since it requires traversing the list. However, operations at the front (using `LPUSH`, `LPOP`) and the end (using `RPUSH`, `RPOP`) are fast (O(1)) because Redis directly modifies the head or tail of the list.
 
 ## Lists
 - `BLPOP key timeout`
